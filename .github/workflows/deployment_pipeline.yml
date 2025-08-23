@@ -45,6 +45,7 @@ jobs:
 
   fly_deployment:
     runs-on: ubuntu-latest
+    needs: playwright_tests
     concurrency: deploy-group    # optional: ensure only one action runs at a time
     steps:
       - uses: actions/checkout@v4
