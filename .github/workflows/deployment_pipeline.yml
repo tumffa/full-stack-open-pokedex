@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
 
 jobs:
   lint_build_test:
@@ -46,6 +49,7 @@ jobs:
   fly_deployment:
     runs-on: ubuntu-latest
     needs: playwright_tests
+    if: ${{ github.event_name == 'push' }}
     concurrency: deploy-group    # optional: ensure only one action runs at a time
     steps:
       - uses: actions/checkout@v4
