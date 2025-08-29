@@ -1,3 +1,6 @@
+# Linkki to exercise 21 repository
+https://github.com/tumffa/fso-11-blogapp
+
 # Full Stack open CI/CD
 
 This repository is used for the CI/CD module of the Full stack open course
